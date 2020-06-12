@@ -19,4 +19,14 @@ router.put('/:id',(req,res) => {
   })
 })
 
+router.post('/', (req,res) => {
+
+})
+
+router.get('/range', (req, res) => {
+  Workout.find({}, (err, docs) => {
+    res.json(docs)
+  })
+})
+
 module.exports = router
