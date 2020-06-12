@@ -12,7 +12,6 @@ router.get('/',(req,res) => {
 
 router.put('/:id',(req,res) => {
   // req.body is a new exercise
-  console.log(req.params.id)
   Workout.findOneAndUpdate({_id: req.params.id},{$push: { exercises: req.body}},{new: true},(err, doc) => {
     if(err){console.log(err)}
     res.json(doc)
@@ -20,7 +19,7 @@ router.put('/:id',(req,res) => {
 })
 
 router.post('/', (req,res) => {
-  Workout.create(req.body, (err, doc) => {
+  Workout.create({day: new Date()}, (err,doc) => {
     res.json(doc)
   })
 })
