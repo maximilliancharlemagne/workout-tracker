@@ -18,6 +18,10 @@ app.get('/exercise',(req,res) => {
   res.sendFile(path.resolve(path.join(__dirname, '/public/exercise.html')))
 })
 
+app.get('/stats', (req, res) => {
+  res.sendFile(path.resolve(path.join(__dirname, '/public/stats.html')))
+})
+
 require('./config')
   .then(() => app.listen(process.env.PORT, () => {
     console.log(`http://localhost:${process.env.PORT}/`)
