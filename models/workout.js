@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose')
 
-module.exports = model('workout', new Schema({
+module.exports = model('exercise', new Schema({
   day: Number
 }))
