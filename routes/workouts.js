@@ -20,7 +20,9 @@ router.put('/:id',(req,res) => {
 })
 
 router.post('/', (req,res) => {
-
+  Workout.create(req.body, (err, doc) => {
+    res.json(doc)
+  })
 })
 
 router.get('/range', (req, res) => {
