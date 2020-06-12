@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose')
 let workoutSchema = new Schema(
   {
     day: {
-      type: Number,
+      type: Date,
       required: true
     },
     exercises: [{}]
